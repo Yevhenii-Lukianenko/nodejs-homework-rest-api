@@ -6,6 +6,10 @@ const { authenticate, upload, avatarProcessing } = require("../../middlewares");
 
 router.post("/register", user.register);
 
+router.get("/verify/:verificationToken", user.verifyEmail);
+
+router.post("/verify", user.resendVerifyEmail);
+
 router.post("/login", user.login);
 
 router.get("/current", authenticate, user.getCurrent);
